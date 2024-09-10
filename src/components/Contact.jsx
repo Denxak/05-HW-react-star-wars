@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { base_url } from '../utils/constants'
+import useCachedData from './useCachedData'
 import '../Contacts.css'
 
 const Contact = () => {
-  const [planets, setPlanets] = useState(['wait...'])
 
-  async function fillPlanets() {
-    const response = await fetch(`${base_url}/v1/planets`);
-    const data = await response.json();
-    const planets = data.map(item => item.name);
-    setPlanets(planets);
-  }
-
-  useEffect(() => {
-    fillPlanets();
-  }, [])
+  const { data = ['Wait...'] } = useCachedData(
+    'planets',
+    `${base_url}/v1/planets`
+  );
+  const planets = data.map(item => item.name);
 
   return (
     <form className="containerContact">
@@ -24,7 +19,7 @@ const Contact = () => {
       <label>Last Name
         <input type="text" name="lastname" placeholder="Your last name.." />
       </label>
-      <label>Country
+      <label>Planets
         <select name="planet">
           {
             planets.map((item) => <option key={item} value={item}>{item}</option>)

@@ -1,23 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { base_url } from '../utils/constants'
+import useCachedData from './useCachedData'
 
 const AboutMe = () => {
-  const [hero, setHero] = useState('Loading...')
 
-  useEffect(() => {
-    fetch(`${base_url}/v1/peoples/1`)
-     .then(response => response.json())
-     .then(data => setHero({
-      name: data.name,
-      gender: data.gender,
-      birth_year: data.birth_year,
-      height: data.height,
-      mass: data.mass,
-      skin_color: data.skin_color,
-      hair_color: data.hair_color,
-      eye_color: data.eye_color
-     }));
-  }, [])
+  const { data: hero } = useCachedData(
+    'cachedHero',
+    `${base_url}/v1/peoples/1`
+  );
 
   return (
     <>
