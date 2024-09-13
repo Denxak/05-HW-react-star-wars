@@ -1,13 +1,13 @@
-header, footer {
+/* header, footer {
   background-color: rgba(60, 69, 67, 0.6);
-}
+} */
 
 /* header */
 
 
 /* main */
 
-.float-start img {
+/* .float-start img {
   box-shadow: 15px 15px 15px rgba(60, 69, 67, 0.6);
 }
 
@@ -21,14 +21,14 @@ header, footer {
 
 .rounded-bottom-end {
   border-bottom-right-radius: 15px;
-}
+} */
 
 /* footer */
 
 
 /* bootstrap customizing */
 
-.btn-danger {
+/* .btn-danger {
   border: 2px solid black;
   border-radius: 5px;
   background-color: rgba(204, 3, 35, 0.5);
@@ -37,4 +37,4 @@ header, footer {
 
 .border {
   border-color: #eedb00 !important;
-}
+} */

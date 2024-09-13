@@ -10,7 +10,7 @@ function App() {
   const [page, setPage] = useState(navItems[0])
 
   return (
-    <div className='container-fluid'>
+    <div>
       <SwContext.Provider value={{
         changePage: (newPage) => { setPage(newPage) }
       }}>

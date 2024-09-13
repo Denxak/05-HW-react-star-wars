@@ -12,15 +12,8 @@ const AboutMe = () => {
   return (
     <>
       {(!!hero) &&
-        <div className='fs-3 lh-lg text-justify ms-5'>
-          <p><span className='display-3'>name:</span> {hero.name}</p>
-          <p><span className='display-3'>gender:</span> {hero.gender}</p>
-          <p><span className='display-3'>birth_year:</span> {hero.birth_year}</p>
-          <p><span className='display-3'>height:</span> {hero.height}</p>
-          <p><span className='display-3'>mass:</span> {hero.mass}</p>
-          <p><span className='display-3'>skin_color:</span> {hero.skin_color}</p>
-          <p><span className='display-3'>hair_color:</span> {hero.hair_color}</p>
-          <p><span className='display-3'>eye_color:</span> {hero.eye_color}</p>
+        <div className='text-3xl leading-normal text-justify tracking-widest ml-8'>
+          {Object.keys(hero).map((key, index) => <p key={key}><span className='text-[1.5em] capitalize'>{key.replace('_', ' ')}:</span> {hero[key]}</p>)}
         </div>
       }
     </>

@@ -21,7 +21,7 @@ const FarGalaxy = () => {
 
 
     return (
-        <p className="fs-2 lh-lg text-justify">
+        <p className="text-3xl leading-normal text-justify tracking-widest">
             {openingCrawl}
         </p>
     )

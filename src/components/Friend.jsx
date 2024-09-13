@@ -1,14 +1,13 @@
 import React from 'react'
 
 const Friend = ({ picture, pos }) => {
-    let styles = "col-4 p-1 "
+    let styles;
     if (pos === 7) {
-        styles += 'rounded-bottom-start'
+        styles = 'rounded-bl-3xl'
     }
     if (pos === 9) {
-        styles += 'rounded-bottom-end'
+        styles = 'rounded-br-3xl'
     }
-    // let styles = `col-4 p-1 ${pos === 7 ? 'rounded-bottom-start' : ''} ${pos === 9 ? 'rounded-bottom-end' : ''}`;
     return (
         <img className={styles} src={picture} alt="Friend" />
     )
